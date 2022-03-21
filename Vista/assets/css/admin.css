@@ -1,0 +1,37 @@
+.moon {
+    transform: translate(1800%, 0%);
+    margin-top: 80%;
+}
+
+.logout {
+    margin-right: 10%;
+}
+
+.sidebar-text {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 170%;
+    line-height: 1.7;
+}
+
+.titulo {
+    font-size: 130%;
+    font-family: "Lato", sans-serif;
+}
+
+.fake-content {
+    height: 1.4rem;
+    background-color: #ecf0f1;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.dark-mode .fake-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.025);
+}

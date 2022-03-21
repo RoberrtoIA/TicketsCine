@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <!-- Halfmoon CSS -->
+    <link href="../assets/halfmoon-1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.1.0-web/css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/img/elefantes.png">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <title>Admin</title>
+</head>
+
+<body>
+    <!-- Page wrapper with .with-navbar class -->
+    <div class="page-wrapper with-navbar">
+        <!-- Navbar (immediate child of the page wrapper) -->
+        <nav class="navbar">
+            <!-- Navbar brand -->
+            <a href="#" class="navbar-brand">
+                <img src="../assets/img/film.png" alt="Logo-Marca">
+            </a>
+            <!-- Navbar text -->
+            <span class="navbar-text text-monospace">La Gran Via</span> <!-- text-monospace = font-family shifted to monospace -->
+            <!-- Navbar nav -->
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px) -->
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Documentacion</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Inicio-Cliente</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="navbar-brand moon" onclick="toggleDemo()">
+                        <i class="fa-solid fa-moon"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Navbar form (inline form) -->
+            <div class="form-inline d-none d-md-flex ml-auto">
+                <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+                <button class="btn" type="submit"><i class="fa-solid fa-arrow-right-from-bracket logout"></i>Salir</button>
+
+            </div>
+            <!-- Navbar content (with the dropdown menu) -->
+            <div class="navbar-content d-md-none ml-auto">
+                <!-- d-md-none = display: none on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
+                <div class="dropdown with-arrow">
+                    <button class="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
+                        Menu
+                        <i class="fa fa-angle-down" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right w-200" aria-labelledby="navbar-dropdown-toggle-btn-1">
+                        <!-- w-200 = width: 20rem (200px) -->
+                        <a href="#" class="dropdown-item">Docs</a>
+                        <a href="#" class="dropdown-item">Products</a>
+                        <div class="dropdown-divider"></div>
+                        <div class="dropdown-content">
+                            <form action="..." method="...">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Email address" required="required">
+                                </div>
+                                <button class="btn btn-primary btn-block" type="submit" onclick="halfmoon.toggleSidebar()">Sign up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content wrapper -->
+        <div class="content-wrapper">
+            <div class="page-wrapper with-sidebar">
+                <!-- Sidebar (immediate child of the page wrapper) -->
+                <div class="sidebar sidebar-text">
+                    <div class="sidebar-menu">
+                        <!-- Sidebar brand -->
+                        <br>
+                        </a>
+                        <h5 class="sidebar-title titulo"><strong>Componentes</strong></h5>
+                        <!-- <a href="#" class="sidebar-brand">
+                            <img src="..." alt="">
+                            Componentes
+                          </a>
+                        <div class="sidebar-divider"></div> -->
+                        <!-- <a href="peliculas.php" class="sidebar-link">Películas</a> -->
+                        <div class="sidebar-divider"></div>
+                        <a href="peliculas.php" class="sidebar-link sidebar-link-with-icon">
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-clapperboard"></i>
+                            </span>
+                            Peliculas
+                          </a>
+                          <a href="salas.php" class="sidebar-link sidebar-link-with-icon">
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-video"></i>
+                            </span>
+                            Salas
+                          </a>
+                          <a href="funciones.php" class="sidebar-link sidebar-link-with-icon">
+                            <span class="sidebar-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </span>
+                            Funciones
+                          </a>
+
+                        <!-- <a href="salas.php" class="sidebar-link">Salas</a>
+                        <a href="funciones.php" class="sidebar-link">Funciones</a> -->
+                        <!-- <a href="#" class="sidebar-link">Ventas</a> -->
+                    </div>
+                </div>
+
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
