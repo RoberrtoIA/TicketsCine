@@ -1,6 +1,6 @@
 <?php
 
-    include __DIR__ . '/public/navbar-sidebar.html';
+    include __DIR__ . '../../public/navbar-sidebar.html';
 
 ?>
  <!-- Aquiiii -->
@@ -48,7 +48,7 @@
 
 <?php
 
-    include __DIR__ . '/public/footer.html';
+    include __DIR__ . '../../public/footer.html';
 
 ?>
 
