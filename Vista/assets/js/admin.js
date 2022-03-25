@@ -1,5 +1,5 @@
-// $(document).ready(function () {
-//     if (!$.browser.webkit) {
-//         $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
-//     }
-// });
+function toggleDemo() {
+    halfmoon.toggleDarkMode();
+  }
+
+  window.onload = toggleDemo;

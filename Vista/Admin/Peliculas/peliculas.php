@@ -22,15 +22,18 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Clasificacion</th>
-                            <th>Duracion</th>
+                            <th class="col-3">ID</th>
+                            <th class="col-3">Nombre</th>
+                            <th class="col-3">Clasificacion</th>
+                            <th class="col-3">Duracion</th>
                             <!-- <th class="text-right">Age</th> -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <?php
+                        require_once '../../../Controlador/controladorPelicula.php';
+                        ?>
+                        <!-- <tr>
                             <th>1</th>
                             <td>John</td>
                             <td>Doe</td>
@@ -49,7 +52,7 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                             <td>Jack</td>
                             <td>Gates</td>
                             <td class="text-right">33</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
