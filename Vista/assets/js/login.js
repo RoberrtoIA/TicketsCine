@@ -32,8 +32,8 @@
   // Toasts danger alert
   function toastDangerAlert() {
     halfmoon.initStickyAlert({
-      content: "This is a danger alert that will be always filled.",
-      title: "Danger alert",
+      content: "Credenciales incorrectar. Usuario no encontrado",
+      title: "Error",
       alertType: "alert-danger",
       fillType: "filled"
     });

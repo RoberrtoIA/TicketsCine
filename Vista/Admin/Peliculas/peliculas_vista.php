@@ -6,7 +6,7 @@ foreach ($datos as $key => $value) {
     $contador++;
 
     echo '<tr>';
-    echo '<th>'. $value['IDPelicula']. '</th>';
+    echo '<th>'. $contador. '</th>';
     echo '<td>'. $value['nombre']. '</td>';
     echo '<td>'. $value['clasificacion']. '</td>';
     echo '<td>'. $value['duracion']. '</td>';
@@ -16,4 +16,7 @@ foreach ($datos as $key => $value) {
                         
 }
 
+
+
 ?>
+   

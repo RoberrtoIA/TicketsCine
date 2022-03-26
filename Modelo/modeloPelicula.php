@@ -19,6 +19,17 @@ class modeloPelicula
         $this->stmt = null;
     }
 
+    public function agregarPelicula()
+    {
+        try {
+            //code...
+        } catch (PDOException $e) {
+            echo  $e->getMessage();
+            die();
+        }
+        $this->stmt = null;
+    }
+
     public function Cerrar()
     {
         $this->db = null;
