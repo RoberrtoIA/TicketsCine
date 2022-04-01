@@ -1,5 +1,9 @@
 <?php
 
+include __DIR__ . '../../public/title.html';
+include __DIR__ . '../../public/modal-editar-pelicula.html';
+include __DIR__ . '../../public/modal-documentacion.html';
+include __DIR__ . '../../public/modal-borrar-pelicula.html';
 include __DIR__ . '../../public/navbar-sidebar.html';
 
 ?>
@@ -13,8 +17,8 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                     Sinopsis
                 </h1>
                 <div id="sinopsis">
-                <div class="fake-content"></div>
-                            <div class="fake-content"></div>
+                    <div class="fake-content"></div>
+                    <div class="fake-content"></div>
                 </div>
             </div>
             <div class="card">
@@ -35,26 +39,6 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                         <?php
                         require_once __DIR__ . '../../../../Controlador/Peliculas/controladorPelicula.php';
                         ?>
-                        <!-- <tr>
-                            <th>1</th>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>10:00</td>
-                            <td class="text-right"><button class="btn" type="submit"><i class="fa-solid fa-pen-to-square"></i></button></td>
-                            <td class="text-left"><button class="btn" type="submit"><i class="fa-solid fa-trash"></i></button></td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Jane</td>
-                            <td>Violet</td>
-                            <td class="text-right">27</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Jack</td>
-                            <td>Gates</td>
-                            <td class="text-right">33</td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -62,7 +46,7 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                 <hr>
                 <!-- <div class="fake-content"></div>
                 <div class="fake-content w-150"></div> -->
-                <form action="#" method="get" class="w-800 mw-full">
+                <form action="../../../Controlador/Peliculas/agregarPelicula.php" method="POST" class="w-800 mw-full" enctype="multipart/form-data">
 
                     <div class="row">
                         <div class="col">
@@ -103,8 +87,13 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                             <div class="row">
                                 <!-- Input Nombre -->
                                 <div class="form-group">
-                                    <label for="duracion" class="required">Duración</label>
-                                    <input type="time" class="form-control" id="duracion" placeholder="00:00" name="duracion" required="required">
+                                    <label for="horas" class="required">Duracion</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <input type="number" id="horas" name="horas" class="form-control" placeholder="Horas" min="0" max="8" required>
+                                        </div>
+                                        <input type="number" id="minutos" name="minutos" class="form-control" placeholder="Minutos" min="0" max="60" required>
+                                    </div>
                                 </div>
                                 <!-- Multi-file input -->
                                 <div class="custom-file offset-1">
@@ -135,6 +124,8 @@ include __DIR__ . '../../public/navbar-sidebar.html';
     </div>
 </div>
 
+
+
 <script type="text/javascript">
     // Using PHP implode() function
     var passedArray =
@@ -153,7 +144,7 @@ include __DIR__ . '../../public/navbar-sidebar.html';
             return function() {
                 var cell = row.getElementsByTagName("th")[0];
                 var id = cell.innerHTML;
-                document.getElementById("imagen").src="../../movies/" + passedArray[(id - 1)][5];
+                document.getElementById("imagen").src = "../../movies/" + passedArray[(id - 1)][5];
                 document.getElementById("sinopsis").innerHTML = passedArray[(id - 1)][4];
                 document.getElementById("titulo").innerHTML = passedArray[(id - 1)][1];
                 // alert("id:" + id);

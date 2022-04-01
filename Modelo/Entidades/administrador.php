@@ -30,16 +30,76 @@ class Gerente extends Persona
 
 class Pelicula {
 
-    private $idPelicula;
+    private $id;
     private $nombre;
     private $duracion;
     private $clasificacion;
+    private $sinopsis;
+    private $img;
 
-    function __construct($idPelicula, $nombre, $duracion, $clasificacion)
+    function __construct($nombre, $duracion, $clasificacion, $sinopsis, $img)
     {
-        $this->idPelicula = $idPelicula;
         $this->nombre = $nombre;
         $this->duracion = $duracion;
         $this->clasificacion = $clasificacion;
+        $this->sinopsis = $sinopsis;
+        $this->img = $img;
     }
+
+    /**
+     * Get the value of nombre
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Get the value of duracion
+     */
+    public function getDuracion()
+    {
+        return $this->duracion;
+    }
+
+    /**
+     * Get the value of clasificacion
+     */
+    public function getClasificacion()
+    {
+        return $this->clasificacion;
+    }
+
+    /**
+     * Get the value of sinopsis
+     */
+    public function getSinopsis()
+    {
+        return $this->sinopsis;
+    }
+
+    /**
+     * Get the value of img
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    /**
+     * Get the value of img
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of img
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    
 }

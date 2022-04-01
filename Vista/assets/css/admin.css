@@ -74,6 +74,37 @@ html {
     user-select: none;
 }
 
+td a button {
+    text-decoration: none;
+    color: inherit;
+}
+
+.dark-mode td a button {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sala {
+    margin: 5%;
+    height: 20vh;
+}
+
+.sala h4 {
+    padding-top: 18%;
+}
+
+#sala {
+    margin-top: 10%;
+}
+
+#crear-sala {
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.invisible {
+    display: none;
+}
 /* #style-1::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

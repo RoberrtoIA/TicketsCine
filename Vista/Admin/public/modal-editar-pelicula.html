@@ -1,0 +1,47 @@
+<div class="modal" id="modal-editar-pelicula" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="modal-title">Editar Pelicula</h5>
+            <form action="../../../Controlador/Peliculas/editarPelicula.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="pelicula" class="required">Pelicula</label>
+                    <input type="pelicula" id="peliculaE" class="form-control" name="nombre" placeholder="Nombre" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="clasificacion" class="required">Clasificación</label>
+                    <input type="clasificacion" id="clasificacionE" name="clasificacion" class="form-control" placeholder="Clasificación"
+                        required="required">
+                </div>
+                <div class="form-group">
+                    <label for="horas" class="required">Duracion</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <input type="number" id="horasE" name="horas" class="form-control" placeholder="Horas" min="0" max="8" required>
+                        </div>
+                        <input type="number" id="minutosE" name="minutos" class="form-control" placeholder="Minutos" min="0" max="60" required>
+                    </div>
+                </div>
+                <input class="invisible" type="text" name="idEditar" id="idEditar">
+                <div class="form-group">
+                    <label for="sinopsisE" class="required">Sinopsis</label>
+                    <!-- <input type="sinopsis" id="sinopsisE" class="form-control" placeholder="Sinopsis"
+                        required="required"> -->
+                    <textarea class="form-control" id="sinopsisE" name="sinopsis" placeholder="Escribe una descripcion de la película" required></textarea>
+                </div>
+                <div class="form-group custom-file offset-3">
+                    <input type="file" id="fileE" multiple="multiple" accept=".jpg,.png,.gif" name="img">
+                    <label for="fileE" class="required">Subir Nueva imagen</label>
+                </div>
+                <div class="text-right mt-20">
+                    <!-- text-right = text-align: right, mt-20 = margin-top: 2rem (20px) -->
+                    <a href="#" class="btn mr-5" role="button">Cerrar</a>
+                    <!-- <a href="#" class="btn btn-danger" role="button">Borrar</a> -->
+                    <button class="btn btn-secondary" type="submit" id="EditarId" name="Editar">Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
