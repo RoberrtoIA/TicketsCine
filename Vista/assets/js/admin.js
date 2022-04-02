@@ -32,6 +32,13 @@ function editar_click(id_editar) {
       break;
     }
 }
+
+
+function obtener_id_borrar_sala(id_borrar_sala) {
+  alert('dsds');
+  document.getElementById('borrarSala').value = document.getElementById(id_borrar_sala).value;
+  // alert(document.getElementById(id_borrar).value);
+}
   // var myArray = passedArray[(id_editar - 1)][3].split(":");
   // document.getElementById('clasificacionE').value = passedArray[(id_editar - 1)][2];
   // document.getElementById('horasE').value = myArray[0];
