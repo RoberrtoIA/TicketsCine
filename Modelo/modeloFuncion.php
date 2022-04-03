@@ -21,9 +21,16 @@ class modeloFuncion
         $this->stmt = null;
     }
 
-    public function agregarFuncion()
+    public function agregarFuncion($fecha, $horario, $pelicula, $sala)
     {
         try {
+            $this->stmt = $this->db->prepare("CALL AgregarFuncion(:fecha, :horario, :pelicula, :sala);");
+            $this->stmt->bindParam(":fecha", $fecha, PDO::PARAM_STR);
+            $this->stmt->bindParam(":horario", $horario, PDO::PARAM_STR);
+            $this->stmt->bindParam(":pelicula", $pelicula, PDO::PARAM_STR);
+            $this->stmt->bindParam(":sala", $sala, PDO::PARAM_STR);
+            $this->stmt->execute();
+            return $this->stmt->fetchAll();
         } catch (PDOException $e) {
             echo  $e->getMessage();
             die();
@@ -31,9 +38,12 @@ class modeloFuncion
         $this->stmt = null;
     }
 
-    public function borrarSala()
+    public function borrarFuncion($id)
     {
         try {
+            $this->stmt = $this->db->prepare("DELETE FROM Funciones WHERE IDFuncion = :id;");
+            $this->stmt->bindParam(":id", $id, PDO::PARAM_INT);
+            $this->stmt->execute();
         } catch (PDOException $e) {
             echo  $e->getMessage();
             die();
@@ -41,7 +51,7 @@ class modeloFuncion
         $this->stmt = null;
     }
 
-    public function editarSala()
+    public function editarFuncion()
     {
         try {
         } catch (PDOException $e) {

@@ -133,6 +133,19 @@ h6 button {
     transform: translate(-300%, 0%);
 }
 
+.btn-ver {
+    height: 10% !important;
+    font-size: 80px;
+}
+
+.ver {
+    margin-top: 2%;
+}
+
+.table-funciones {
+    max-height: 45vh !important;
+}
+
 /* .btn-borrar-sala {
     margin-right: 23vh !important;
 } */

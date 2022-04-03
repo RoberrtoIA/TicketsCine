@@ -46,6 +46,11 @@ function obtenerPelicula(idPelicula) {
   document.getElementById('IdPeliculaSeleccion').value = document.getElementById(idPelicula).value;
 }
 
+function borrarFuncion(idFuncion) {
+  // document.getElementById(idFuncion).value;
+  location.href = "/Controlador/Funciones/borrarFuncion.php?id="+document.getElementById(idFuncion).value;
+}
+
 // document.getElementById("borrarSala").disabled = true;
 // document.getElementById("IdPeliculaSeleccion").disabled = true;
 

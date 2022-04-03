@@ -49,10 +49,6 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                     </tbody>
                 </table>
             </div>
-            <div class="content">
-                <div class="fake-content"></div>
-                <div class="fake-content w-150"></div>
-            </div>
         </div>
         <div class="col-lg-4 d-none d-lg-block">
             <div class="content">
@@ -92,12 +88,27 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                     <button class="btn btn-block alt-dm" name="CrearSala" value="CrearSala" type="submit">Crear</button>
                 </form>
             </div>
-            <div class="content">
+            <br><br>
+            <!-- <button class="btn btn-lg btn-block alt-dm btn-ver" type="button">Ver</button> -->
+            <a href="funciones_crud.php" class="btn btn-lg btn-block alt-dm btn-ver" role="button"><div class="ver">Ver</div></a>
+            <!-- <div class="content">
                 <h2 class="content-title font-size-20">
                     Funciones
                 </h2>
-                
-            </div>
+                <table class="table table-hover unselectable" id="table">
+                    <thead>
+                        <tr>
+                            <th class="col">IDFuncion</th>
+                            <th class="col">Fecha</th>
+                            <th class="col">Horario</th>
+                            <th class="col">Pelicula</th>
+                            <th class="col">Sala</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div> -->
         </div>
     </div>
 </div>
