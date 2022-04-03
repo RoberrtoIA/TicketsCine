@@ -1,11 +1,11 @@
 <?php
 
+include __DIR__ . '../../public/verificar-sesion.php';
 include __DIR__ . '../../public/title.html';
 include __DIR__ . '../../public/modal-editar-pelicula.html';
 include __DIR__ . '../../public/modal-documentacion.html';
 include __DIR__ . '../../public/modal-borrar-pelicula.html';
 include __DIR__ . '../../public/navbar-sidebar.html';
-
 ?>
 <!-- Aquiiii -->
 

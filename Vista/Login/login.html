@@ -25,24 +25,24 @@
             </div>
             <div class="col-4 login-box">
                 <h2>Login</h2>
-                <form action="..." method="..." class="w-400 mw-full">
+                <form action="../../Controlador/Login/login.php" method="POST" class="w-400 mw-full">
                     <!-- w-400 = width: 40rem (400px), mw-full = max-width: 100% -->
                     <!-- Input Email -->
                     <div class="form-group">
                         <label for="full-email" class="required">E-mail</label>
-                        <input type="email" class="form-control" id="full-email" placeholder="E-mail"
+                        <input type="email" class="form-control" name="email" id="full-email" placeholder="E-mail"
                             required="required">
                     </div>
 
                     <!-- Input Email -->
                     <div class="form-group">
                         <label for="full-pass" class="required">Contraseña</label>
-                        <input type="password" class="form-control" id="full-pass" placeholder="Password"
+                        <input type="password" class="form-control" name="pass" id="full-pass" placeholder="Password"
                             required="required">
                     </div>
                     <hr>
                     <!-- Submit button -->
-                    <button class="btn btn-block boton" type="button">Ingresar</button>
+                    <button class="btn btn-block boton" type="submit" name="login" value="login">Ingresar</button>
 
                     <div class="inicio">
                         <label for="agree-to-terms">Pagina de <a href="#" class="hyperlink">inicio</a></label>

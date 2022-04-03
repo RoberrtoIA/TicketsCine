@@ -5,26 +5,68 @@ include_once 'arraylist.php';
 
 class Gerente extends Persona
 {
+    private $id;
     private $email;
-    private $listaPeliculas;
+    private $pass;
+    // private $listaPeliculas;
 
-    function __construct($email, $nombre, $apellido)
+    function __construct($id, $email, $pass, $nombre, $apellido)
     {
         parent::__construct($nombre, $apellido);
+        $this->id = $id;
         $this->email = $email;
-        $this->listaPeliculas = new ArrayList();
+        $this->pass = $pass;
+        // $this->listaPeliculas = new ArrayList();
     }
 
-    function agregarPelicula(Pelicula $pelicula) {
-        $this->listaPeliculas->Add($pelicula);
-    }
+    // function agregarPelicula(Pelicula $pelicula) {
+    //     $this->listaPeliculas->Add($pelicula);
+    // }
 
-    function borrarPelicula() {
+    // function borrarPelicula() {
 
-    }
+    // }
 
-    function editarPelicula() {
+    // function editarPelicula() {
         
+    // }
+
+    /**
+     * Get the value of id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Get the value of email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get the value of pass
+     */
+    public function getPass()
+    {
+        return $this->pass;
+    }
+    /**
+     * Get the value of nombre
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+    /**
+     * Get the value of apellido
+     */
+    public function getApellido()
+    {
+        return $this->apellido;
     }
 }
 

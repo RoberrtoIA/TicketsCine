@@ -1,5 +1,6 @@
 <?php
 
+include __DIR__ . '../../public/verificar-sesion.php';
 include __DIR__ . '../../public/title.html';
 include __DIR__ . '../../public/modal-documentacion.html';
 include __DIR__ . '../../public/modal-configuracion-sala.html';
