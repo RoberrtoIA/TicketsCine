@@ -36,18 +36,22 @@
     border-color: rgba(255, 255, 255, 0.025);
 }
 
-input[type=time]::-webkit-datetime-edit-ampm-field {
-    display: none;
-}
-
 .agregar {
     width: 160%;
 }
 
-table {
+.table-peliculas {
     display: block;
     height: 28vh; 
     max-height: 28vh !important;
+    overflow: auto;
+}
+
+.table-peliculas-vista {
+    display: block;
+    height: 25vh; 
+    max-height: 25vh !important;
+    width: 90vh !important;
     overflow: auto;
 }
 
@@ -123,6 +127,10 @@ h6 button {
 
 .btn-cerrar-sala {
     margin-right: 15vh !important;
+}
+
+.col-nombre {
+    transform: translate(-300%, 0%);
 }
 
 /* .btn-borrar-sala {

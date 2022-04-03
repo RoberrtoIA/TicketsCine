@@ -38,7 +38,7 @@ include __DIR__ . '../../public/navbar-sidebar.html';
             </div>
             <div class="card unselectable">
                 <h2 class="card-title">
-                    Salas
+                    Teatros
                 </h2>
                 <?php
                 require_once __DIR__ . '../../../../Controlador/Salas/readSala.php';

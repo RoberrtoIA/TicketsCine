@@ -8,7 +8,7 @@ class modeloSala
     public function Seleccionar()
     {
         try {
-            $this->stmt = $this->db->prepare("SELECT IDSala, nombre FROM Salas;");
+            $this->stmt = $this->db->prepare("SELECT IDSala, nombre as nombreSala FROM Salas;");
             $this->stmt->execute();
             return $this->stmt->fetchAll();
         } catch (PDOException $e) {

@@ -25,7 +25,7 @@ include __DIR__ . '../../public/navbar-sidebar.html';
                 <h2 class="card-title">
                     Estrenos
                 </h2>
-                <table class="table table-hover unselectable" id="table">
+                <table class="table table-hover unselectable table-peliculas" id="table">
                     <thead>
                         <tr>
                             <th class="col-3">#</th>

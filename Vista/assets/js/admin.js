@@ -28,24 +28,28 @@ function editar_click(id_editar) {
       // document.getElementById('fileE').value = passedArray[i][5];
       document.getElementById('EditarId').value = passedArray[i][5];
       document.getElementById('idEditar').value = passedArray[i][0];
-      
+
       break;
     }
-}
+  }
 
 
-function obtener_id_borrar_sala(id_borrar_sala) {
-  alert('dsds');
-  document.getElementById('borrarSala').value = document.getElementById(id_borrar_sala).value;
-  // alert(document.getElementById(id_borrar).value);
+  function obtener_id_borrar_sala(id_borrar_sala) {
+    alert('dsds');
+    document.getElementById('borrarSala').value = document.getElementById(id_borrar_sala).value;
+    // alert(document.getElementById(id_borrar).value);
+  }
+
 }
-  // var myArray = passedArray[(id_editar - 1)][3].split(":");
-  // document.getElementById('clasificacionE').value = passedArray[(id_editar - 1)][2];
-  // document.getElementById('horasE').value = myArray[0];
-  // document.getElementById('minutosE').value = myArray[1];
-  // document.getElementById('sinopsisE').value = passedArray[(id_editar - 1)][4];
-  // document.getElementById('fileE').src = "../../movies/" + passedArray[(id_editar - 1)][5];
-  // alert(document.getElementById('fileE').src);
-  // alert(passedArray[(id_editar - 1)][3]);
-  
+
+function obtenerPelicula(idPelicula) {
+  document.getElementById('IdPeliculaSeleccion').value = document.getElementById(idPelicula).value;
 }
+
+// document.getElementById("borrarSala").disabled = true;
+// document.getElementById("IdPeliculaSeleccion").disabled = true;
+
+// function obtenerSala(idSala) {
+//   alert(document.getElementById(idSala).value);
+//   document.getElementById('IdSalaSeleccion').value = document.getElementById(idSala).value;
+// }
