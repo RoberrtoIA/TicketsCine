@@ -38,7 +38,7 @@
                 </li>
             </ul>
             <!-- Navbar form (inline form) -->
-            <form class="form-inline d-none d-md-flex ml-auto" action="..." method="...">
+            <form class="form-inline d-none d-md-flex ml-auto" action="" method="post">
                 <!-- d-none = display: none, d-md-flex = display: flex on medium screens and up (width > 768px), ml-auto = margin-left: auto -->
                 <input type="text" class="form-control" placeholder="Pelicula" required="required">
                 <button class="btn" type="submit">Buscar</button>

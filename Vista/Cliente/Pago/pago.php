@@ -10,7 +10,10 @@
 </head>
 <body>
 	<div class="contenedor">
-
+	<?php
+	// var_dump($_GET);
+	// var_dump($_POST);
+	?>
 		<!-- Tarjeta -->
 		<section class="tarjeta" id="tarjeta">
 			<div class="delantera">
@@ -62,8 +65,10 @@
 		</div>
 
 		<!-- Formulario -->
+		
 		<form action="ticket.php" id="formulario-tarjeta" class="formulario-tarjeta">
-			<div class="grupo">
+		<!-- ticket.php -->
+		<div class="grupo">
 				<label for="inputNumero">Número Tarjeta</label>
 				<input type="text" id="inputNumero" maxlength="19" autocomplete="off">
 			</div>
@@ -95,11 +100,22 @@
 					<input type="text" id="inputCCV" maxlength="3">
 				</div>
 			</div>
-			<button type="submit" class="btn-enviar">Enviar</button>
+			<input type="hidden" name="fecha" value="<?php echo $_GET['fecha'] ; ?>"/>
+			<input type="hidden" name="funcion" value="<?php echo $_GET['funcion'] ; ?>"/>
+			<input type="hidden" name="sala" value="<?php echo $_GET['sala'] ; ?>"/>
+			<input type="hidden" name="asientos" value="<?php echo $_POST['numero'] ; ?>"/>
+			<button type="submit" class="btn-enviar"> <a href="../Index/index.php">Enviar</a></button>
 		</form>
 	</div>
 
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
+	<script type="text/javascript" src="../../assets/js/pago.js"></script>
+	<script type="text/javascript">
+		// alert('hiii');
+		// alert(url.searchParams.get('funcion').value);
+		// var newUser = urlParams.get('funcion');
+		// alert(newUser);
+	</script>
 </body>
 </html>

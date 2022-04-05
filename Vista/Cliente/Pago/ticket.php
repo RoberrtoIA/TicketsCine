@@ -46,16 +46,17 @@ class myPDF extends FPDF
     function viewTable()
     {
         $this->SetFont('Times', '', 32);
-        $this->Cell(30, 10, 'Fecha', 0, 0, 'R');
-        $this->Cell(60, 10, 'Hora', 0, 0, 'R');
+        $this->Cell(55, 10, $_GET['fecha'], 0, 0, 'R');
+        $this->Cell(60, 10, $_GET['funcion'], 0, 0, 'R');
         $this->Ln();
         $this->Ln();
         $this->SetFont('Times', '', 40);
-        $this->Cell(26, 10, 'Sala', 0, 0, 'R');
-        $this->Cell(70, 10, 'Asiento', 0, 0, 'R');
-        $this->Cell(60, 10, 'Fila', 0, 0, 'R');
+        $this->Cell(35, 10, $_GET['sala'], 0, 0, 'R');
+        $this->Cell(90, 10, 'Asiento 1 - '. $_GET['asientos'], 0, 0, 'R');
+        $this->Cell(50, 10, 'Fila: A', 0, 0, 'R');
     }
 }
+
 
 $pdf = new myPDF();
 $pdf->AliasNbPages();
@@ -63,3 +64,5 @@ $pdf->AddPage('L', 'A5', 0);
 // $pdf->headerTable();
 $pdf->viewTable();
 $pdf->Output();
+echo "<script type=\"text/javascript\" language=\"Javascript\">window.open('/Vista/Cliente/Index/index.php');</script>";
+// header('Location: /Vista/Cliente/Index/index.php');

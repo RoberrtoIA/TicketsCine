@@ -87,7 +87,7 @@
                                 <!-- p-0 = padding: 0 -->
                                 <img src="../../movies/<?php echo $_GET['img'] ?>" class="img-fluid rounded-top titulo-pelicula" width="65%" alt="Pelicula"> <!-- rounded-top = rounded corners on the top -->
                                 <!-- First content container nested inside card -->
-                                <form action="../Pago/pago.php" method="post">
+                                <form action="../Pago/pago.php?fecha=<?php echo $_GET['fecha']; ?>&funcion=<?php echo $_GET['funcion']; ?>&sala=<?php echo $_GET['sala'] ?>" method="post">
                                     <div class="content">
                                         <h2 class="content-title">
                                             <?php echo $_GET['pelicula'] ?>
@@ -120,7 +120,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">#</span>
                                                 </div>
-                                                <input type="number" min="0" max="10" class="form-control" placeholder="Ingrese un numero" required>
+                                                <input type="number" min="1" max="10" class="form-control" name="numero" placeholder="Ingrese un numero" required>
                                             </div>
                                         </div>
                                         <hr />
