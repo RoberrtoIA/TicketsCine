@@ -78,58 +78,6 @@
                             <?php
                             require_once __DIR__ . '../../../../Controlador/Index/readVerPelicula.php';
                             ?>
-                            <!-- <nav aria-label="...">
-                                <ul class="pagination text-center">
-                                    <li class="page-item disabled">
-                                        <a href="#" class="page-link w-100" tabindex="-1">Anterior.</a> 
-                                    </li>
-                                    <li class="page-item active">
-                                        <a href="#" class="page-link" tabindex="-1">1</a>
-                                    </li>
-                                    <li class="page-item" aria-current="page"><a href="#" class="page-link">2</a></li>
-                                    <li class="page-item" aria-current="page"><a href="#" class="page-link">3</a></li>
-                                    <li class="page-item">
-                                        <a href="#" class="page-link w-100">Siguiente</a> <
-                                    </li>
-                                </ul>
-                            </nav> -->
-                            <!-- <div class="card">
-                                <h2 class="card-title">
-                                    Batman
-                                </h2>
-                                <div class="row">
-                                    <div class="col"> <img src="../../assets/Peliculas disponibles/1.jpg" width="45%" alt="Pelicula-Cartelera"> </div>
-                                    <div class="col">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span class="badge">A</span>
-                                                <span class="badge bg-dark text-white">1:20</span>
-                                                <a href="#" class="badge badge-primary">Ver trailer</a>
-                                            </div>
-
-                                        </div>
-                                        <br>
-                                        <hr>
-                                        <br>
-                                        <div class="row">
-                                            <div class="col-1">
-                                                <a href="#" class="badge">17:30</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-
-
-                            <!-- <div class="fake-content"></div>
-                            <div class="fake-content"></div>
-                            <div class="fake-content"></div>
-
-                            <div class="fake-content w-100"></div> -->
-                            <!-- <div class="content">
-                                <div class="fake-content"></div>
-                                <div class="fake-content w-150"></div>
-                            </div> -->
                         </div>
                         <div class="col-lg-3 d-none d-lg-block">
                             <div class="content">

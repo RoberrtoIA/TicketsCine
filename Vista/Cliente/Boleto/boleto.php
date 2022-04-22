@@ -87,7 +87,7 @@
                                 <!-- p-0 = padding: 0 -->
                                 <img src="../../movies/<?php echo $_GET['img'] ?>" class="img-fluid rounded-top titulo-pelicula" width="65%" alt="Pelicula"> <!-- rounded-top = rounded corners on the top -->
                                 <!-- First content container nested inside card -->
-                                <form action="../Pago/pago.php?fecha=<?php echo $_GET['fecha']; ?>&funcion=<?php echo $_GET['funcion']; ?>&sala=<?php echo $_GET['sala'] ?>" method="post">
+                                <form action="../Pago/pago.php?fecha=<?php echo $_GET['fecha']; ?>&funcion=<?php echo $_GET['funcion']; ?>&sala=<?php echo $_GET['sala'] ?>&pelicula=<?php echo $_GET['pelicula']; ?>" method="post">
                                     <div class="content">
                                         <h2 class="content-title">
                                             <?php echo $_GET['pelicula'] ?>

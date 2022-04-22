@@ -1,1 +1,0 @@
-<script type="text/javascript" language="Javascript"> window.onload = window.open('/Vista/Cliente/Index/index.php');</script>

@@ -1,68 +1,75 @@
 <?php
 require('fpdf184/fpdf.php');
 
-class myPDF extends FPDF
-{
-    function header()
-    {
-        $this->SetFont('Arial', 'B', '84');
-        // $this->Cell(200, 5, '★', 0, 0, 'C');
-        // $this->Ln();
-        $this->Cell(200, 5, ' ', 0, 0, 'C');
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();
-        $this->Cell(190, 5, 'Ticket Cine', 0, 0, 'C');
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();
-        $this->Cell(190, 5, '____________', 0, 0, 'C');
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();
-        $this->Ln();
-    }
+$pdf = new FPDF($orientation='P',$unit='mm', array(45,90));
+$pdf->AddPage();
+$pdf->SetFont('Arial','B',8);    //Letra Arial, negrita (Bold), tam. 20
+$textypos = 5;
+$pdf->setY(2);
+$pdf->setX(2);
+$pdf->Cell(5,$textypos,"Cinema");
+$pdf->SetFont('Arial','',5);    //Letra Arial, negrita (Bold), tam. 20
+$textypos+=6;
+$pdf->setX(2);
+$pdf->Cell(5,$textypos,'-----------------------------------------------------------------');
+$textypos+=6;
+$pdf->setX(2);
+$pdf->Cell(5,$textypos,'            ASUNTO              DESCRIPCION');
+$textypos+=6;
+$pdf->setX(2);
+$pdf->Cell(2,$textypos,'-----------------------------------------------------------------');
 
-    function footer()
-    {
-        $this->SetY(-15);
-        $this->SetFont('Arial', '', '22');
-        $this->Cell(0, 10, 'Un Asiento / Ticket #' . $this->PageNo() . '/{nb}', 0, 0, 'C');
-    }
-
-    function headerTable()
-    {
-        $this->SetFont('Times', 'B', 12);
-        $this->Cell(20, 10, 'ID ', 1, 0, 'C');
-        $this->Cell(40, 10, 'Nombre ', 1, 0, 'C');
-        $this->Cell(40, 10, 'Apellido ', 1, 0, 'C');
-        $this->Cell(40, 10, 'Ciudad ', 1, 0, 'C');
-        $this->Cell(60, 10, 'Fecha de Inscripcion ', 1, 0, 'C');
-        $this->Cell(70, 10, 'Email ', 1, 0, 'C');
-        $this->Ln();
-    }
-
-    function viewTable()
-    {
-        $this->SetFont('Times', '', 32);
-        $this->Cell(55, 10, $_GET['fecha'], 0, 0, 'R');
-        $this->Cell(60, 10, $_GET['funcion'], 0, 0, 'R');
-        $this->Ln();
-        $this->Ln();
-        $this->SetFont('Times', '', 40);
-        $this->Cell(35, 10, $_GET['sala'], 0, 0, 'R');
-        $this->Cell(90, 10, 'Asiento 1 - '. $_GET['asientos'], 0, 0, 'R');
-        $this->Cell(50, 10, 'Fila: A', 0, 0, 'R');
-    }
-}
+$total =0;
+$off = $textypos+6;
+$producto = array(
+	"sala"=>"A",
+	"asiento"=>"8",
+    "fecha"=>"10-10-10",
+    "funcion"=>"5:30 PM"
+);
+// $productos = array($producto, $producto);
 
 
-$pdf = new myPDF();
-$pdf->AliasNbPages();
-$pdf->AddPage('L', 'A5', 0);
-// $pdf->headerTable();
-$pdf->viewTable();
-$pdf->Output();
-echo "<script type=\"text/javascript\" language=\"Javascript\">window.open('/Vista/Cliente/Index/index.php');</script>";
-// header('Location: /Vista/Cliente/Index/index.php');
+    $pdf->setX(8);
+    $pdf->Cell(35,$off,  strtoupper(substr("Teatro", 0,12)) );
+    $pdf->setX(20);
+    $pdf->Cell(11,$off,  $producto["sala"],0,0,"R");
+
+    $off+=6;
+    $pdf->setX(8);
+    $pdf->Cell(35,$off,  strtoupper(substr("Asiento", 0,12)) );
+    $pdf->setX(20);
+    $pdf->Cell(11,$off,  $producto["asiento"],0,0,"R");
+
+    $off+=6;
+    $pdf->setX(8);
+    $pdf->Cell(35,$off,  strtoupper(substr("Fecha", 0,12)) );
+    $pdf->setX(20);
+    $pdf->Cell(11,$off,  $producto["fecha"],0,0,"R");
+
+    $off+=6;
+    $pdf->setX(8);
+    $pdf->Cell(35,$off,  strtoupper(substr("Funcion", 0,12)) );
+    $pdf->setX(20);
+    $pdf->Cell(11,$off,  $producto["funcion"],0,0,"R");
+    
+
+// foreach($productos as $pro){
+// $pdf->setX(8);
+// $pdf->Cell(35,$off,  strtoupper(substr($pro["sala"], 0,12)) );
+// $pdf->setX(20);
+// $pdf->Cell(11,$off,  $pro["asiento"],0,0,"R");
+
+// $off+=6;
+// }
+$textypos=$off+6;
+
+// $pdf->setX(2);
+// $pdf->Cell(5,$textypos,"TOTAL: " );
+// $pdf->setX(38);
+// $pdf->Cell(5,$textypos,"$ ".number_format($total,2,".",","),0,0,"R");
+
+$pdf->setX(2);
+$pdf->Cell(5,$textypos+6,'         GRACIAS POR TU COMPRA!!!!!!!! ');
+
+$pdf->output();
