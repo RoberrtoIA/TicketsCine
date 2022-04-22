@@ -1,6 +1,10 @@
 <?php
 
-class modeloSala
+require 'Interfaces/crud.php';
+require 'Interfaces/modelo.php';
+// require 'Interfaces/modelo.php.php';
+
+class modeloSala 
 {
     private $stmt;
     private $db;

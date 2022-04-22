@@ -1,7 +1,6 @@
 <?php
 
-// var_dump($_POST);
-// die();
+
 if (isset($_POST['pelicula'])) {
     // echo var_dump($_POST);
     // die();
@@ -16,10 +15,9 @@ if (isset($_POST['pelicula'])) {
 
     $duracion = $_POST['horas'] . ':' . $_POST['minutos'];
     $pelicula = new Pelicula($_POST['pelicula'], $duracion, $_POST['clasificacion'], $_POST['sinopsis'], $img_name);
-    // session_start();
 
     $objeto->agregarPelicula($pelicula);
 }
 
-header('Location: /Vista/Admin/Peliculas/peliculas.php');
+header('Location: /TicketsCine/Vista/Admin/Peliculas/peliculas.php');
 // var_dump($_POST);

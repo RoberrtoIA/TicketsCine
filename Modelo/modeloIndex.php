@@ -1,6 +1,9 @@
 <?php
 
-class modeloIndex
+require_once __DIR__ . '/Interfaces/modelo.php';
+require 'Interfaces/modelo.php';
+
+class modeloIndex 
 {
     private $stmt;
     private $db;

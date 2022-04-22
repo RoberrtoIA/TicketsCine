@@ -6,7 +6,7 @@ if (isset($_POST['sala'])) {
 
     $objeto = new modeloSala();
     $objeto->agregarSala($_POST['sala']);
-    header('Location: /Vista/Admin/Salas/salas.php');
+    header('Location: /TicketsCine/Vista/Admin/Salas/salas.php');
 }
 
 

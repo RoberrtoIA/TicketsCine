@@ -1,6 +1,9 @@
 <?php
 
-class modeloFuncion
+// require 'Interfaces/crud.php';
+require 'Interfaces/modelo.php';
+
+class modeloFuncion 
 {
     private $stmt;
     private $db;

@@ -9,6 +9,6 @@ if (isset($_POST['Editar'])) { // Nombre
     $objeto->editarSala($_POST['Editar'], $_POST['ID']);
 }
 
-header('Location: /Vista/Admin/Salas/salas.php');
+header('Location: /TicketsCine/Vista/Admin/Salas/salas.php');
 
 ?>

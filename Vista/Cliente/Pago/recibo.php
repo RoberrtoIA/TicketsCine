@@ -6,11 +6,15 @@ require 'vendor/PHPMailer/src/Exception.php';
 require 'vendor/PHPMailer/src/PHPMailer.php';
 require 'vendor/PHPMailer/src/SMTP.php';
 
+require '../../../Modelo/Entidades/cliente.php';
+
 if(isset($_POST['email'])){
 
     session_start();
 
     $email = $_POST['email'];
+
+    $cliente = new Cliente($email);
 
    
     //Load composer's autoloader
@@ -39,7 +43,7 @@ if(isset($_POST['email'])){
         $mail->setFrom('raegar18@gmail.com');
         
         //Recipients
-        $mail->addAddress($email);              
+        $mail->addAddress($cliente->getCorreo());              
         $mail->addReplyTo('raegar18@gmail.com');
         
         //Content
@@ -83,7 +87,7 @@ if(isset($_POST['email'])){
     } catch (Exception $e) {
 	   echo 'error';
     }
-    header("location: /Vista/Cliente/Pago/thank.php");
+    header("location: /TicketsCine/Vista/Cliente/Pago/thank.php");
 }
 
 ?>

@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/Entidades/administrador.php';
+require_once __DIR__ . '/Entidades/peliculas.php';
+require_once __DIR__ . '/Interfaces/modelo.php';
+require 'Interfaces/crud.php';
 
 class modeloPelicula
 {
@@ -21,20 +23,21 @@ class modeloPelicula
         $this->stmt = null;
     }
 
-    public function agregarPelicula(Pelicula $pelicula)
+    public function agregarPelicula($nombre, $clasificacion, $duracion, $sinopsis, $img)
     {
         try {
             $this->stmt = $this->db->prepare("SELECT PeliculaExiste(:nombre, :img);");
-            $this->stmt->bindParam(":nombre", $pelicula->getNombre(), PDO::PARAM_STR);
-            $this->stmt->bindParam(":img", $pelicula->getImg(), PDO::PARAM_STR);
+            $this->stmt->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+            $this->stmt->bindParam(":img", $img, PDO::PARAM_STR);
             if ($this->stmt->execute() == 1) {
                 $this->stmt = $this->db->prepare("CALL AgregarPelicula(:nombre, :clasificacion, :duracion, :sinopsis, :img);");
-                $this->stmt->bindParam(":nombre", $pelicula->getNombre(), PDO::PARAM_STR);
-                $this->stmt->bindParam(":clasificacion", $pelicula->getClasificacion(), PDO::PARAM_STR);
-                $this->stmt->bindParam(":duracion", $pelicula->getDuracion(), PDO::PARAM_STR);
-                $this->stmt->bindParam(":sinopsis", $pelicula->getSinopsis(), PDO::PARAM_STR);
-                $this->stmt->bindParam(":img", $pelicula->getImg(), PDO::PARAM_STR);
+                $this->stmt->bindParam(":nombre", $nombre, PDO::PARAM_STR);
+                $this->stmt->bindParam(":clasificacion", $clasificacion, PDO::PARAM_STR);
+                $this->stmt->bindParam(":duracion", $duracion, PDO::PARAM_STR);
+                $this->stmt->bindParam(":sinopsis", $sinopsis, PDO::PARAM_STR);
+                $this->stmt->bindParam(":img", $img, PDO::PARAM_STR);
                 $this->stmt->execute();
+                return true;
             } else {
                 // print_r(Conexion::Conexion()->errorInfo());
                 
@@ -43,9 +46,38 @@ class modeloPelicula
         } catch (PDOException $e) {
             echo  $e->getMessage();
             die();
+            return false;
         }
         $this->stmt = null;
     }
+
+    // public function agregarPelicula(Pelicula $pelicula)
+    // {
+    //     try {
+    //         $this->stmt = $this->db->prepare("SELECT PeliculaExiste(:nombre, :img);");
+    //         $this->stmt->bindParam(":nombre", $pelicula->getNombre(), PDO::PARAM_STR);
+    //         $this->stmt->bindParam(":img", $pelicula->getImg(), PDO::PARAM_STR);
+    //         if ($this->stmt->execute() == 1) {
+    //             $this->stmt = $this->db->prepare("CALL AgregarPelicula(:nombre, :clasificacion, :duracion, :sinopsis, :img);");
+    //             $this->stmt->bindParam(":nombre", $pelicula->getNombre(), PDO::PARAM_STR);
+    //             $this->stmt->bindParam(":clasificacion", $pelicula->getClasificacion(), PDO::PARAM_STR);
+    //             $this->stmt->bindParam(":duracion", $pelicula->getDuracion(), PDO::PARAM_STR);
+    //             $this->stmt->bindParam(":sinopsis", $pelicula->getSinopsis(), PDO::PARAM_STR);
+    //             $this->stmt->bindParam(":img", $pelicula->getImg(), PDO::PARAM_STR);
+    //             $this->stmt->execute();
+    //             return true;
+    //         } else {
+    //             // print_r(Conexion::Conexion()->errorInfo());
+                
+    //         }
+    //         $this->stmt = null;
+    //     } catch (PDOException $e) {
+    //         echo  $e->getMessage();
+    //         die();
+    //         return false;
+    //     }
+    //     $this->stmt = null;
+    // }
 
     public function borrarPelicula($pelicula)
     {

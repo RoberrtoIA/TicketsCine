@@ -9,6 +9,6 @@ if (isset($_POST['Borrar'])) { // Nombre
     $objeto->borrarSala($_POST['Borrar']);
 }
 
-header('Location: /Vista/Admin/Salas/salas.php');
+header('Location: /TicketsCine/Vista/Admin/Salas/salas.php');
 
 ?>
