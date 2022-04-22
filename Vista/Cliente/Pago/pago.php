@@ -131,7 +131,6 @@
 							?>
 							<div class="contenedor-tarjeta">
 								<form action="recibo.php" method="post">
-								<form action="enciar_correo.php" method="POST">
 									<!-- First row -->
 									<div class="form-row row-eq-spacing-sm">
 										<div class="col-10">
@@ -173,7 +172,6 @@
 										<!-- text-center = text-align: center, mt-20 = margin-top: 2rem (20px) -->
 										<button class="btn btn-lg pago-btn" type="submit">Pago</button>
 									</div>
-								</form>
 								</form>
 							</div>
 						</div>
